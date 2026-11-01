@@ -1,279 +1,1036 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hoxyr — AI Workspace for Modern Teams</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: { sans: ['Inter', 'sans-serif'] },
-      colors: { brand: '#5B5CF6', dark: '#0B0B0F' }
-    }
-  }
-}
-</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Legal — Terms, Privacy &amp; Refunds · Hoxyr</title>
+<meta name="description" content="Hoxyr legal hub: Terms of Service, Privacy Policy and Refund Policy for the AI workspace for modern teams." />
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter/400.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter/500.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter/600.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/inter/700.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk/500.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk/700.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono/500.css" />
+
 <style>
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+/* ============ TOKENS ============ */
+:root{
+  --font-body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --font-head:'Space Grotesk','Inter',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --r-lg:22px; --r-md:16px; --r-sm:11px;
+  --acc:#7c6cff; --acc2:#4ea8ff; --acc3:#39e6b0;
+  --grad:linear-gradient(120deg,#8b7bff 0%,#5aa9ff 55%,#3ee0c0 120%);
+  --ease:cubic-bezier(.22,.75,.28,1);
+}
+html[data-theme="dark"]{
+  --bg:#07070c; --bg2:#0b0b13;
+  --panel:rgba(255,255,255,.035);
+  --panel-2:rgba(255,255,255,.055);
+  --line:rgba(255,255,255,.09);
+  --line-2:rgba(255,255,255,.16);
+  --txt:#eef0f8; --txt-2:#a6abc4; --txt-3:#6f7593;
+  --shadow:0 24px 60px -28px rgba(0,0,0,.85);
+  --grid:rgba(255,255,255,.045);
+}
+html[data-theme="light"]{
+  --bg:#f6f7fb; --bg2:#ffffff;
+  --panel:rgba(16,18,32,.03);
+  --panel-2:rgba(16,18,32,.05);
+  --line:rgba(16,18,32,.10);
+  --line-2:rgba(16,18,32,.18);
+  --txt:#0d0f1a; --txt-2:#4c5268; --txt-3:#7b819a;
+  --shadow:0 24px 50px -30px rgba(18,20,40,.35);
+  --grid:rgba(16,18,32,.05);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--txt);
+  font-family:var(--font-body);font-size:16px;line-height:1.7;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  transition:background .45s var(--ease),color .45s var(--ease);
+}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(124,108,255,.35);color:#fff}
+
+/* ambient background */
+.amb{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.amb::before,.amb::after{
+  content:"";position:absolute;width:52vw;height:52vw;border-radius:50%;
+  filter:blur(110px);opacity:.30;
+}
+.amb::before{background:radial-gradient(circle,#6f5dff,transparent 65%);top:-16vw;left:-10vw}
+.amb::after{background:radial-gradient(circle,#1fb6ff,transparent 65%);top:22vh;right:-16vw;opacity:.22}
+.amb .gridlines{
+  position:absolute;inset:0;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 80% 55% at 50% 0%,#000 25%,transparent 78%);
+}
+.wrap{width:min(1240px,92vw);margin-inline:auto;position:relative;z-index:2}
+
+/* ============ HEADER ============ */
+header.site{
+  position:sticky;top:0;z-index:60;
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  background:color-mix(in srgb,var(--bg) 72%,transparent);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;gap:22px;height:70px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-weight:700;letter-spacing:-.02em;font-size:19px}
+.mark{
+  width:32px;height:32px;display:grid;place-items:center;border-radius:10px;
+  background:var(--grad);color:#0a0a12;font-size:15px;font-weight:700;
+  box-shadow:0 6px 20px -6px rgba(124,108,255,.85);
+}
+.nav-links{display:flex;gap:4px;margin-left:14px}
+.nav-links a{
+  font-size:14px;color:var(--txt-2);padding:8px 13px;border-radius:999px;
+  transition:.25s var(--ease);font-weight:500;
+}
+.nav-links a:hover{color:var(--txt);background:var(--panel-2)}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.icon-btn{
+  width:38px;height:38px;display:grid;place-items:center;border-radius:11px;
+  border:1px solid var(--line);background:var(--panel);color:var(--txt-2);
+  cursor:pointer;transition:.25s var(--ease);font-size:15px;
+}
+.icon-btn:hover{color:var(--txt);border-color:var(--line-2);transform:translateY(-1px)}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;
+  padding:11px 20px;border-radius:999px;cursor:pointer;border:1px solid transparent;
+  transition:.28s var(--ease);font-family:var(--font-body);white-space:nowrap;
+}
+.btn-ghost{border-color:var(--line);background:var(--panel);color:var(--txt)}
+.btn-ghost:hover{border-color:var(--line-2);background:var(--panel-2);transform:translateY(-1px)}
+.btn-solid{background:var(--grad);color:#08080f;box-shadow:0 12px 30px -14px rgba(124,108,255,.95)}
+.btn-solid:hover{transform:translateY(-2px);box-shadow:0 18px 38px -14px rgba(124,108,255,1)}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--grad);transition:width .12s linear}
+
+/* ============ HERO ============ */
+.hero{padding:74px 0 34px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:600;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--txt-2);border:1px solid var(--line);
+  background:var(--panel);padding:7px 15px;border-radius:999px;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--acc3);box-shadow:0 0 0 4px rgba(57,230,176,.16);animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+h1.title{
+  font-family:var(--font-head);font-weight:700;letter-spacing:-.045em;line-height:1.02;
+  font-size:clamp(38px,6.2vw,74px);margin:22px 0 0;
+}
+.grad-txt{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{max-width:64ch;color:var(--txt-2);font-size:clamp(15.5px,1.5vw,18px);margin:20px 0 0}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
+.fact{
+  border:1px solid var(--line);background:var(--panel);border-radius:var(--r-md);
+  padding:17px 18px;transition:.3s var(--ease);position:relative;overflow:hidden;
+}
+.fact::after{content:"";position:absolute;inset:0;background:var(--grad);opacity:0;transition:.35s}
+.fact:hover{transform:translateY(-3px);border-color:var(--line-2);box-shadow:var(--shadow)}
+.fact .k{font-family:var(--font-head);font-size:23px;font-weight:700;letter-spacing:-.02em;position:relative;z-index:1}
+.fact .v{font-size:13px;color:var(--txt-3);position:relative;z-index:1;margin-top:3px}
+
+/* ============ TABS + TOOLBAR ============ */
+.toolbar{
+  position:sticky;top:70px;z-index:50;padding:16px 0;margin-top:30px;
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  background:color-mix(in srgb,var(--bg) 78%,transparent);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.tabs{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tab{
+  display:inline-flex;align-items:center;gap:9px;padding:10px 18px;border-radius:999px;
+  border:1px solid var(--line);background:var(--panel);color:var(--txt-2);
+  font-size:14px;font-weight:600;cursor:pointer;transition:.28s var(--ease);font-family:var(--font-body);
+}
+.tab:hover{color:var(--txt);border-color:var(--line-2);transform:translateY(-1px)}
+.tab[aria-selected="true"]{
+  color:#08080f;background:var(--grad);border-color:transparent;
+  box-shadow:0 10px 26px -12px rgba(124,108,255,.95);
+}
+.tab .ic{font-size:14px}
+.tools{margin-left:auto;display:flex;gap:9px;align-items:center}
+.search{
+  display:flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--panel);
+  border-radius:999px;padding:0 15px;height:41px;min-width:250px;transition:.28s var(--ease);
+}
+.search:focus-within{border-color:var(--acc);box-shadow:0 0 0 4px rgba(124,108,255,.16)}
+.search input{
+  border:0;background:transparent;color:var(--txt);font-family:var(--font-body);font-size:14px;
+  width:100%;outline:none;
+}
+.search input::placeholder{color:var(--txt-3)}
+.search .kbd{font-family:var(--font-mono);font-size:10.5px;color:var(--txt-3);border:1px solid var(--line);border-radius:6px;padding:2px 6px}
+
+/* ============ LAYOUT ============ */
+.layout{display:grid;grid-template-columns:264px minmax(0,1fr);gap:44px;padding:44px 0 90px;align-items:start}
+aside.toc{position:sticky;top:158px;max-height:calc(100vh - 190px);overflow:auto;padding-right:6px}
+aside.toc::-webkit-scrollbar{width:5px}
+aside.toc::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:9px}
+.toc-title{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--txt-3);font-weight:700;margin-bottom:14px}
+.toc-list{list-style:none;margin:0;padding:0;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.toc-list a{
+  display:block;padding:8px 14px;font-size:13.5px;color:var(--txt-3);border-left:2px solid transparent;
+  margin-left:-1px;transition:.22s var(--ease);line-height:1.45;
+}
+.toc-list a:hover{color:var(--txt)}
+.toc-list a.active{color:var(--txt);border-left-color:var(--acc);background:linear-gradient(90deg,rgba(124,108,255,.14),transparent)}
+.toc-card{
+  margin-top:24px;border:1px solid var(--line);background:var(--panel);border-radius:var(--r-md);
+  padding:18px;font-size:13.5px;color:var(--txt-2);
+}
+.toc-card strong{display:block;color:var(--txt);font-family:var(--font-head);font-size:15px;margin-bottom:6px}
+.toc-card a.mail{color:var(--acc2);font-weight:600;word-break:break-all}
+.toc-card a.mail:hover{text-decoration:underline}
+
+/* ============ DOC ============ */
+.doc{display:none;animation:fade .5s var(--ease)}
+.doc.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.doc-head{margin-bottom:28px}
+.doc-head .tag{
+  font-family:var(--font-mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--txt-3);display:inline-flex;gap:10px;align-items:center;
+}
+.doc-head h2{
+  font-family:var(--font-head);font-weight:700;letter-spacing:-.035em;line-height:1.06;
+  font-size:clamp(30px,4vw,46px);margin:12px 0 14px;
+}
+.doc-head .intro{
+  border:1px solid var(--line);border-left:3px solid var(--acc);background:var(--panel);
+  border-radius:0 var(--r-md) var(--r-md) 0;padding:18px 22px;color:var(--txt-2);font-size:15.5px;
+}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.chip{
+  font-size:12.5px;color:var(--txt-2);border:1px solid var(--line);background:var(--panel);
+  padding:6px 13px;border-radius:999px;font-weight:500;
+}
+.chip b{color:var(--txt);font-weight:600}
+
+.sec{
+  border:1px solid var(--line);background:var(--panel);border-radius:var(--r-lg);
+  padding:26px 28px;margin-bottom:16px;position:relative;
+  transition:.3s var(--ease);scroll-margin-top:170px;
+}
+.sec:hover{border-color:var(--line-2);background:var(--panel-2)}
+.sec.flash{animation:flash 1.5s var(--ease)}
+@keyframes flash{0%{box-shadow:0 0 0 0 rgba(124,108,255,.55)}100%{box-shadow:0 0 0 22px rgba(124,108,255,0)}}
+.sec h3{
+  font-family:var(--font-head);font-size:20px;font-weight:700;letter-spacing:-.02em;
+  margin:0 0 12px;display:flex;align-items:center;gap:13px;
+}
+.num{
+  flex:none;width:32px;height:32px;border-radius:10px;display:grid;place-items:center;
+  font-family:var(--font-mono);font-size:13px;font-weight:500;color:var(--txt);
+  border:1px solid var(--line-2);background:var(--panel-2);
+}
+.sec p{margin:0 0 12px;color:var(--txt-2);font-size:15.4px}
+.sec p:last-child{margin-bottom:0}
+.sec strong{color:var(--txt);font-weight:600}
+.sec a{color:var(--acc2);font-weight:500;border-bottom:1px solid rgba(78,168,255,.35)}
+.sec a:hover{border-bottom-color:var(--acc2)}
+ul.clean{list-style:none;margin:12px 0;padding:0;display:flex;flex-direction:column;gap:10px}
+ul.clean li{
+  position:relative;padding-left:28px;color:var(--txt-2);font-size:15.2px;
+}
+ul.clean li::before{
+  content:"";position:absolute;left:6px;top:11px;width:6px;height:6px;border-radius:50%;
+  background:var(--grad);
+}
+ul.clean li b{color:var(--txt);font-weight:600}
+.link-btn{
+  position:absolute;top:22px;right:22px;opacity:0;transform:translateX(-5px);
+  border:1px solid var(--line);background:var(--bg2);color:var(--txt-3);
+  width:32px;height:32px;border-radius:9px;display:grid;place-items:center;cursor:pointer;
+  transition:.25s var(--ease);font-size:13px;
+}
+.sec:hover .link-btn{opacity:1;transform:none}
+.link-btn:hover{color:var(--txt);border-color:var(--acc)}
+.link-btn.copied{color:var(--acc3);border-color:var(--acc3)}
+
+.callout{
+  display:flex;gap:14px;border-radius:var(--r-md);padding:17px 19px;margin:16px 0 4px;
+  border:1px solid var(--line);background:var(--panel-2);font-size:14.6px;color:var(--txt-2);
+}
+.callout .ci{flex:none;font-size:16px;line-height:1.5}
+.callout.key{border-color:rgba(57,230,176,.35);background:linear-gradient(120deg,rgba(57,230,176,.10),rgba(124,108,255,.06))}
+.callout.key b{color:var(--acc3)}
+.callout.warn{border-color:rgba(255,176,90,.32);background:rgba(255,176,90,.07)}
+.callout b{color:var(--txt)}
+
+.price-note{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0 2px;
+}
+.pn{border:1px solid var(--line);border-radius:var(--r-md);padding:15px 16px;background:var(--panel-2)}
+.pn .t{font-family:var(--font-head);font-weight:700;font-size:15px}
+.pn .d{font-size:13px;color:var(--txt-3);margin-top:3px}
+
+mark{background:rgba(255,214,102,.35);color:inherit;border-radius:4px;padding:0 2px}
+.no-results{
+  border:1px dashed var(--line-2);border-radius:var(--r-lg);padding:44px 24px;text-align:center;color:var(--txt-3);
+}
+.no-results b{display:block;font-family:var(--font-head);font-size:19px;color:var(--txt);margin-bottom:6px}
+.count-line{font-size:12.5px;color:var(--txt-3);font-family:var(--font-mono);margin:0 0 18px;letter-spacing:.04em}
+
+/* ============ CTA ============ */
+.cta{
+  margin:20px 0 0;border:1px solid var(--line);border-radius:var(--r-lg);padding:44px 40px;
+  background:radial-gradient(120% 140% at 12% 0%,rgba(124,108,255,.20),transparent 58%),var(--panel);
+  display:flex;gap:30px;align-items:center;justify-content:space-between;flex-wrap:wrap;position:relative;overflow:hidden;
+}
+.cta h3{font-family:var(--font-head);font-size:clamp(23px,2.8vw,32px);letter-spacing:-.03em;margin:0 0 8px;font-weight:700}
+.cta p{margin:0;color:var(--txt-2);font-size:15.4px;max-width:52ch}
+.cta .acts{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ============ FOOTER ============ */
+footer.site{border-top:1px solid var(--line);background:color-mix(in srgb,var(--bg2) 70%,transparent);padding:56px 0 30px;margin-top:20px}
+.fgrid{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:34px}
+.fgrid h5{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--txt-3);margin:0 0 14px;font-weight:700}
+.fgrid ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.fgrid a{font-size:14px;color:var(--txt-2);transition:.2s}
+.fgrid a:hover{color:var(--txt)}
+.fbrand p{font-size:14px;color:var(--txt-3);max-width:34ch;margin:14px 0 0}
+.fbot{
+  margin-top:40px;padding-top:22px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--txt-3);
+}
+.fbot a:hover{color:var(--txt)}
+.fbot .links{display:flex;gap:20px}
+
+/* to-top */
+.totop{
+  position:fixed;right:22px;bottom:22px;z-index:70;width:46px;height:46px;border-radius:14px;
+  border:1px solid var(--line-2);background:color-mix(in srgb,var(--bg2) 88%,transparent);color:var(--txt);
+  cursor:pointer;display:grid;place-items:center;backdrop-filter:blur(12px);
+  opacity:0;pointer-events:none;transform:translateY(12px);transition:.3s var(--ease);font-size:16px;
+}
+.totop.show{opacity:1;pointer-events:auto;transform:none}
+.totop:hover{border-color:var(--acc);color:var(--acc)}
+
+.toast{
+  position:fixed;left:50%;bottom:30px;transform:translate(-50%,20px);z-index:90;
+  background:var(--bg2);border:1px solid var(--line-2);color:var(--txt);
+  padding:11px 20px;border-radius:999px;font-size:13.5px;font-weight:500;
+  opacity:0;pointer-events:none;transition:.32s var(--ease);box-shadow:var(--shadow);
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1040px){
+  .layout{grid-template-columns:1fr;gap:26px}
+  aside.toc{position:static;max-height:none;order:-1}
+  .toc-list{flex-direction:row;overflow:auto;border-left:0;border-bottom:1px solid var(--line);padding-bottom:8px;gap:6px}
+  .toc-list a{border-left:0;border-bottom:2px solid transparent;margin:0 0 -1px;white-space:nowrap;padding:8px 12px;border-radius:8px 8px 0 0}
+  .toc-list a.active{border-left-color:transparent;border-bottom-color:var(--acc)}
+  .toc-card{display:none}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .nav-links{display:none}
+}
+@media(max-width:720px){
+  .toolbar{top:70px}
+  .tools{width:100%;margin-left:0}
+  .search{min-width:0;flex:1}
+  .sec{padding:22px 19px}
+  .price-note{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .cta{padding:32px 24px}
+  .link-btn{opacity:1;transform:none;top:16px;right:16px}
+}
+@media(max-width:460px){
+  .facts{grid-template-columns:1fr}
+  .fgrid{grid-template-columns:1fr}
+  .tab{flex:1;justify-content:center;padding:10px 12px}
+}
+@media print{
+  header.site,.toolbar,aside.toc,.totop,.cta,footer.site,.link-btn,.amb{display:none!important}
+  body{background:#fff;color:#000}
+  .doc{display:block!important;page-break-after:always}
+  .sec{border-color:#ddd;background:#fff;break-inside:avoid}
+  .layout{display:block;padding:0}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
-<body class="bg-[#FCFCF9] text-[#0B0B0F]">
+<body>
 
-<!-- NAVBAR -->
-<nav class="sticky top-0 z-50 bg-[#FCFCF9]/80 backdrop-blur-xl border-b border-zinc-100">
-  <div class="max-w-[1120px] mx-auto px-6 h-[64px] flex items-center justify-between">
-    <div class="flex items-center gap-8">
-      <a href="#" class="flex items-center gap-2 font-extrabold text-xl tracking-tight"><span class="w-8 h-8 rounded-lg bg-[#0B0B0F] text-white grid place-items-center text-sm">◈</span> Hoxyr</a>
-      <div class="hidden md:flex items-center gap-6 text-sm font-medium text-zinc-600">
-        <a href="#features" class="hover:text-black transition">Features</a>
-        <a href="#how" class="hover:text-black transition">How it works</a>
-        <a href="#pricing" class="hover:text-black transition">Pricing</a>
-        <a href="#faq" class="hover:text-black transition">FAQ</a>
+<div class="amb"><div class="gridlines"></div></div>
+
+<!-- ============ HEADER ============ -->
+<header class="site">
+  <div class="wrap nav">
+    <a href="#" class="brand"><span class="mark">◈</span>Hoxyr</a>
+    <nav class="nav-links">
+      <a href="#doc-terms" data-jump="terms">Terms</a>
+      <a href="#doc-privacy" data-jump="privacy">Privacy</a>
+      <a href="#doc-refunds" data-jump="refunds">Refunds</a>
+      <a href="#" data-jump="contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle color theme">◐</button>
+      <button class="icon-btn" id="printBtn" title="Print / Save as PDF" aria-label="Print document">⎙</button>
+      <a class="btn btn-solid" href="#doc-terms">Start free →</a>
+    </div>
+  </div>
+  <div class="progress" id="progress"></div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="wrap hero">
+  <span class="eyebrow"><span class="dot"></span> Legal · hoxyr.app</span>
+  <h1 class="title">The fine print,<br /><span class="grad-txt">without the fog.</span></h1>
+  <p class="lead">
+    Everything that governs your use of Hoxyr — the AI workspace that connects your tools, understands your data,
+    and helps your team ship faster. Plain language, no gotchas, no buried surprises.
+  </p>
+
+  <div class="facts">
+    <div class="fact"><div class="k">14 days</div><div class="v">Free trial · no credit card</div></div>
+    <div class="fact"><div class="k">0%</div><div class="v">Your data trains public models</div></div>
+    <div class="fact"><div class="k">$19<span style="font-size:14px;color:var(--txt-3)">/mo</span></div><div class="v">Pro, billed annually</div></div>
+    <div class="fact"><div class="k">1 click</div><div class="v">Cancel or change anytime</div></div>
+  </div>
+</section>
+
+<!-- ============ TOOLBAR ============ -->
+<div class="toolbar" id="toolbar">
+  <div class="wrap">
+    <div class="tabs" role="tablist" aria-label="Legal documents">
+      <button class="tab" role="tab" id="tab-terms" aria-controls="doc-terms" aria-selected="true" data-doc="terms"><span class="ic">§</span> Terms of Service</button>
+      <button class="tab" role="tab" id="tab-privacy" aria-controls="doc-privacy" aria-selected="false" data-doc="privacy"><span class="ic">🔒</span> Privacy Policy</button>
+      <button class="tab" role="tab" id="tab-refunds" aria-controls="doc-refunds" aria-selected="false" data-doc="refunds"><span class="ic">↩</span> Refund Policy</button>
+      <div class="tools">
+        <label class="search">
+          <span style="color:var(--txt-3);font-size:14px">⌕</span>
+          <input id="searchInput" type="search" placeholder="Search legal docs…" aria-label="Search legal documents" autocomplete="off" />
+          <span class="kbd">/</span>
+        </label>
       </div>
     </div>
-    <div class="flex items-center gap-3">
-      <a href="#pricing" class="hidden md:inline-flex text-sm font-medium px-4 py-2">Sign in</a>
-      <a href="#pricing" class="inline-flex bg-[#0B0B0F] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-zinc-800 transition">Start free</a>
-    </div>
   </div>
-</nav>
+</div>
 
-<!-- HERO -->
-<section class="max-w-[1120px] mx-auto px-6 pt-16 pb-12 md:pt-24 md:pb-20 text-center">
-  <div class="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase bg-white border border-zinc-200 rounded-full px-4 py-1.5 shadow-sm">
-    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> AI workspace for modern teams
-  </div>
-  <h1 class="mt-6 text-[32px] md:text-[56px] font-extrabold tracking-[-0.04em] leading-[0.95] max-w-3xl mx-auto">
-    Turn messy work into<br> <span class="bg-gradient-to-r from-[#5B5CF6] to-[#8B5CF6] bg-clip-text text-transparent">clean results</span> — automatically.
-  </h1>
-  <p class="mt-5 text-[16px] md:text-[18px] leading-relaxed text-zinc-500 max-w-2xl mx-auto">
-    Hoxyr connects your tools, understands your data, and helps your team ask questions, automate workflows, and ship faster — all in one AI workspace. No setup headaches. No busywork.
-  </p>
-  <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-    <a href="#pricing" class="w-full sm:w-auto bg-[#5B5CF6] text-white font-semibold px-8 py-3.5 rounded-full hover:bg-[#4F46E5] transition shadow-lg shadow-indigo-200">Start free trial →</a>
-    <a href="#" class="w-full sm:w-auto bg-white border border-zinc-200 font-semibold px-8 py-3.5 rounded-full hover:bg-zinc-50 transition flex items-center justify-center gap-2">▶ Watch demo</a>
-  </div>
-  <p class="mt-4 text-xs font-medium text-zinc-400">No credit card required · Free 14-day trial · Cancel anytime</p>
-  
-  <!-- HERO MOCKUP -->
-  <div class="mt-12 md:mt-16 bg-white rounded-[24px] border border-zinc-200 shadow-2xl p-2 md:p-3 max-w-4xl mx-auto">
-    <div class="bg-[#0B0B0F] rounded-[16px] p-4 md:p-6 text-left overflow-hidden">
-      <div class="flex items-center gap-1.5 mb-6"><span class="w-3 h-3 rounded-full bg-red-500"></span><span class="w-3 h-3 rounded-full bg-yellow-500"></span><span class="w-3 h-3 rounded-full bg-green-500"></span><span class="ml-4 text-zinc-500 text-xs font-mono">hoxyr.ai — workspace</span></div>
-      <div class="grid md:grid-cols-[200px_1fr] gap-6">
-        <div class="hidden md:block space-y-3 text-xs font-medium text-zinc-400"><p class="text-white font-semibold">● Connected tools</p><p>◌ Slack — 12 channels synced</p><p>◌ Notion — 342 docs indexed</p><p>◌ Google Drive — Synced</p><p>◌ Linear — 89 tickets</p></div>
-        <div class="bg-white rounded-xl p-5">
-          <p class="text-xs font-semibold text-[#5B5CF6] uppercase tracking-widest">Ask anything</p>
-          <p class="mt-2 font-medium">"What did we ship last week and what's blocking launch?"</p>
-          <div class="mt-4 bg-zinc-50 rounded-xl p-4 text-sm leading-relaxed text-zinc-600 border border-zinc-100">
-            <span class="font-semibold text-black">Hoxyr:</span> Last week you shipped 3 features: Checkout v2, AI summaries, and SSO. 2 items are blocking launch: <b>API rate limit ticket #482</b> and <b>Design review for onboarding</b>.
-          </div>
+<!-- ============ MAIN ============ -->
+<main class="wrap layout">
+  <aside class="toc">
+    <div class="toc-title">On this page</div>
+    <ul class="toc-list" id="tocList"></ul>
+    <div class="toc-card" id="contact">
+      <strong>Questions?</strong>
+      Our team answers legal &amp; billing questions in plain English.
+      <div style="margin-top:12px;display:flex;flex-direction:column;gap:6px">
+        <a class="mail" href="mailto:support@hoxyr.app">support@hoxyr.app</a>
+        <a class="mail" href="mailto:privacy@hoxyr.app">privacy@hoxyr.app</a>
+      </div>
+    </div>
+  </aside>
+
+  <div id="docsRoot">
+    <p class="count-line" id="countLine"></p>
+
+    <!-- ========== TERMS ========== -->
+    <article class="doc active" id="doc-terms" role="tabpanel" aria-labelledby="tab-terms">
+      <div class="doc-head">
+        <span class="tag">Document 01 / Agreement</span>
+        <h2>Terms of Service</h2>
+        <div class="intro">
+          Welcome to Hoxyr (<a href="https://hoxyr.app">https://hoxyr.app</a>). By accessing or using our AI-powered
+          workspace and automation platform (<strong>“Service”</strong>), you agree to be bound by these Terms of Service
+          (<strong>“Terms”</strong>). Please read them carefully.
+        </div>
+        <div class="meta-row">
+          <span class="chip">Last updated · <b>October 1, 2026</b></span>
+          <span class="chip">Applies to · <b>hoxyr.app &amp; all workspaces</b></span>
+          <span class="chip">Merchant of Record · <b>Paddle</b></span>
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- FEATURES -->
-<section id="features" class="max-w-[1120px] mx-auto px-6 py-16">
-  <div class="text-center max-w-2xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Everything you need to move faster.</h2>
-    <p class="mt-3 text-zinc-500">Powerful AI, connected to the tools you already use.</p>
-  </div>
-  <div class="mt-10 grid md:grid-cols-3 gap-6">
-    <div class="bg-white rounded-2xl border border-zinc-200 p-6 hover:shadow-lg transition">
-      <div class="w-10 h-10 rounded-xl bg-indigo-50 grid place-items-center text-lg">◐</div>
-      <h3 class="mt-4 font-semibold">AI that understands your data</h3>
-      <p class="mt-2 text-sm leading-relaxed text-zinc-500">Ask questions in plain English. Hoxyr reads your docs, tickets, and dashboards and gives you answers — not just links.</p>
-    </div>
-    <div class="bg-white rounded-2xl border border-zinc-200 p-6 hover:shadow-lg transition">
-      <div class="w-10 h-10 rounded-xl bg-amber-50 grid place-items-center text-lg">⚡</div>
-      <h3 class="mt-4 font-semibold">Automate the busywork</h3>
-      <p class="mt-2 text-sm leading-relaxed text-zinc-500">Turn repetitive tasks into one-click AI actions. Summaries, follow-ups, reports — done before your coffee cools.</p>
-    </div>
-    <div class="bg-white rounded-2xl border border-zinc-200 p-6 hover:shadow-lg transition">
-      <div class="w-10 h-10 rounded-xl bg-emerald-50 grid place-items-center text-lg">⬢</div>
-      <h3 class="mt-4 font-semibold">Connects to your stack</h3>
-      <p class="mt-2 text-sm leading-relaxed text-zinc-500">Works with Slack, Notion, Google Drive, HubSpot, Linear, and 40+ more tools. One click to sync.</p>
-    </div>
-    <div class="bg-white rounded-2xl border border-zinc-200 p-6 hover:shadow-lg transition">
-      <div class="w-10 h-10 rounded-xl bg-zinc-100 grid place-items-center text-lg">🔒</div>
-      <h3 class="mt-4 font-semibold">Private by design</h3>
-      <p class="mt-2 text-sm leading-relaxed text-zinc-500">Your data stays yours. End-to-end encryption, role-based access, and zero training on your data. Ever.</p>
-    </div>
-    <div class="bg-white rounded-2xl border border-zinc-200 p-6 hover:shadow-lg transition">
-      <div class="w-10 h-10 rounded-xl bg-blue-50 grid place-items-center text-lg">◈</div>
-      <h3 class="mt-4 font-semibold">Real-time insights</h3>
-      <p class="mt-2 text-sm leading-relaxed text-zinc-500">Monitor performance, catch anomalies, and get alerts before problems grow into fires.</p>
-    </div>
-    <div class="bg-white rounded-2xl border border-zinc-200 p-6 hover:shadow-lg transition">
-      <div class="w-10 h-10 rounded-xl bg-violet-50 grid place-items-center text-lg">◎</div>
-      <h3 class="mt-4 font-semibold">Built for teams</h3>
-      <p class="mt-2 text-sm leading-relaxed text-zinc-500">Shared workspaces, permissions, audit logs, and collaboration that actually feels smooth.</p>
-    </div>
-  </div>
-</section>
+      <section class="sec" id="t-acceptance">
+        <button class="link-btn" title="Copy link to section">⧉</button>
+        <h3><span class="num">1</span> Acceptance of Terms</h3>
+        <p>
+          By creating an account or using Hoxyr, you represent that you are at least <strong>18 years old</strong> and
+          legally competent to enter into a binding agreement. If you are using the Service on behalf of an organization,
+          you agree to these Terms for that organization.
+        </p>
+      </section>
 
-<!-- HOW IT WORKS -->
-<section id="how" class="bg-white border-y border-zinc-100">
-  <div class="max-w-[1120px] mx-auto px-6 py-16">
-    <div class="text-center"><h2 class="text-3xl md:text-4xl font-bold tracking-tight">From connected to done in 3 steps.</h2></div>
-    <div class="mt-10 grid md:grid-cols-3 gap-6">
-      <div class="bg-[#FCFCF9] rounded-2xl border border-zinc-200 p-8 text-center">
-        <div class="w-12 h-12 rounded-full bg-[#0B0B0F] text-white grid place-items-center font-bold mx-auto">01</div>
-        <h3 class="mt-4 font-semibold">Connect your tools</h3>
-        <p class="mt-2 text-sm text-zinc-500">Sync Slack, Notion, Drive, and more in under two minutes.</p>
+      <section class="sec" id="t-service">
+        <button class="link-btn" title="Copy link to section">⧉</button>
+        <h3><span class="num">2</span> Description of Service</h3>
+        <p>
+          Hoxyr provides an AI workspace that connects with third-party tools (e.g., Slack, Notion, Google Drive) to index
+          data, answer queries, and automate workflows. We offer both <strong>free and paid subscription models</strong>.
+        </p>
+        <div class="callout">
+          <span class="ci">⬢</span>
+          <span>One-click sync across <b>40+ integrations</b> — Slack, Notion, Google Drive, HubSpot, Linear and more,
+          with new connectors added every month.</span>
+        </div>
+      </section>
+
+      <section class="sec" id="t-accounts">
+        <button class="link-btn" title="Copy link to section">⧉</button>
+        <h3><span class="num">3</span> Accounts and Subscriptions</h3>
+        <ul class="clean">
+          <li><b>Account Security:</b> You are responsible for maintaining the confidentiality of your account credentials.</li>
+          <li><b>Paid Plans:</b> Our Pro plan is billed on a monthly ($24/mo) or annual ($19/mo, billed annually) basis. All fees are exclusive of applicable taxes handled by our Merchant of Record, Paddle.</li>
+          <li><b>Renewal and Cancellation:</b> Subscriptions automatically renew unless canceled at least 24 hours before the end of the billing period. You can cancel anytime via your dashboard.</li>
+        </ul>
+        <div class="price-note">
+          <div class="pn"><div class="t">Free — $0</div><div class="d">1 workspace · 100 AI actions / mo · 3 integrations</div></div>
+          <div class="pn"><div class="t">Pro — $24/mo</div><div class="d">$19/mo billed annually · unlimited AI actions · 40+ integrations</div></div>
+          <div class="pn"><div class="t">Enterprise — Custom</div><div class="d">SSO / SAML, audit logs, SLA, dedicated success manager</div></div>
+        </div>
+        <div class="callout warn">
+          <span class="ci">⏱</span>
+          <span>Cancel <b>at least 24 hours</b> before your billing period ends to avoid the next automatic renewal charge.</span>
+        </div>
+      </section>
+
+      <section class="sec" id="t-ip">
+        <button class="link-btn" title="Copy link to section">⧉</button>
+        <h3><span class="num">4</span> Intellectual Property</h3>
+        <p>
+          Hoxyr and its original content, features, and functionality remain the exclusive property of Hoxyr. You retain
+          <strong>full ownership and intellectual property rights</strong> over any data, text, or files you connect or
+          upload to the Service (<strong>“User Content”</strong>).
+        </p>
+      </section>
+
+      <section class="sec" id="t-liability">
+        <button class="link-btn" title="Copy link to section">⧉</button>
+        <h3><span class="num">5</span> Limitation of Liability</h3>
+        <p>
+          To the maximum extent permitted by law, Hoxyr shall not be liable for any indirect, incidental, special, or
+          consequential damages resulting from the use or inability to use our Service.
+        </p>
+      </section>
+
+      <section class="sec" id="t-changes">
+        <button class="link-btn" title="Copy link to section">⧉</button>
+        <h3><span class="num">6</span> Changes to Terms</h3>
+        <p>
+          We reserve the right to modify these Terms at any time. We will notify users of significant changes by posting
+          the new terms on this page.
+        </p>
+      </section>
+
+      <section class="sec" id="t-contact">
+        <button class="link-btn" title="Copy link to section">⧉</button>
+        <h3><span class="num">✉</span> Contact Us</h3>
+        <p>
+          If you have any questions about these Terms, please contact us at
+          <a href="mailto:support@hoxyr.app">support@hoxyr.app</a>.
+        </p>
+      </section>
+    </article>
+
+    <!-- ========== PRIVACY ========== -->
+    <article class="doc" id="doc-privacy" role="tabpanel" aria-labelledby="tab-privacy" hidden>
+      <div class="doc-head">
+        <span class="tag">Document 02 / Data</span>
+        <h2>Privacy Policy</h2>
+        <div class="intro">
+          At Hoxyr (<a href="https://hoxyr.app">https://hoxyr.app</a>), accessible from our website, one of our main
+          priorities is the privacy of our visitors and users. This Privacy Policy document outlines the types of
+          information collected and recorded by Hoxyr and how we use it.
+        </div>
+        <div class="meta-row">
+          <span class="chip">Last updated · <b>October 1, 2026</b></span>
+          <span class="chip">Data officer · <b>privacy@hoxyr.app</b></span>
+          <span class="chip">Encryption · <b>End-to-end</b></span>
+        </div>
       </div>
-      <div class="bg-[#FCFCF9] rounded-2xl border border-zinc-200 p-8 text-center">
-        <div class="w-12 h-12 rounded-full bg-[#0B0B0F] text-white grid place-items-center font-bold mx-auto">02</div>
-        <h3 class="mt-4 font-semibold">Ask or automate</h3>
-        <p class="mt-2 text-sm text-zinc-500">Type a question or pick a workflow. Hoxyr handles the rest.</p>
+
+      <section class="sec" id="p-collect">
+        <button class="link-btn" title="Copy link to section">⧉</button>
+        <h3><span class="num">1</span> Information We Collect</h3>
+        <ul class="clean">
+          <li><b>Account Information:</b> When you register, we collect your name, email address, and profile details.</li>
+          <li><b>Connected Tools Data:</b> To provide our core AI workspace features, Hoxyr connects via API to your selected third-party integrations (e.g., Slack, Notion, Google Drive). We index and access this data solely to process your prompts and automate workflows.</li>
+          <li><b>Payment Data:</b> All transaction billing details are processed securely by our Merchant of Record, Paddle. Hoxyr does not store or see your raw credit card numbers.</li>
+        </ul>
+      </section>
+
+      <section class="sec" id="p-use">
+        <button class="link-btn" title="Copy link to section">⧉</button>
+        <h3><span class="num">2</span> How We Use Your Information</h3>
+        <p>
+          We use your data strictly to operate, maintain, and improve the Hoxyr workspace, process user prompts, and send
+          transactional emails.
+        </p>
+        <div class="callout key">
+          <span class="ci">🔒</span>
+          <span>We maintain a strict policy: <b>YOUR DATA IS NEVER USED TO TRAIN PUBLIC AI MODELS.</b> Ever.</span>
+        </div>
+      </section>
+
+      <section class="sec" id="p-security">
+        <button class="link-btn" title="Copy link to section">⧉</button>
+        <h3><span class="num">3</span> Data Security &amp; Retention</h3>
+        <p>
+          We use industry-standard <strong>end-to-end encryption</strong> to protect your data. Your data stays yours,
+          protected by <strong>role-based access controls</strong>. We retain your information only as long as your account
+          remains active.
+        </p>
+      </section>
+
+      <section class="sec" id="p-rights">
+        <button class="link-btn" title="Copy link to section">⧉</button>
+        <h3><span class="num">4</span> GDPR and CCPA Privacy Rights</h3>
+        <p>
+          Depending on your location, you have the right to request <strong>access to, deletion of, or modification</strong>
+          of your personal data stored on our servers. You can execute these rights directly from your account panel or by
+          contacting support.
+        </p>
+        <ul class="clean">
+          <li><b>Access</b> — export a copy of the personal data we hold about you.</li>
+          <li><b>Deletion</b> — request erasure from your account panel or via support.</li>
+          <li><b>Modification</b> — correct inaccurate or incomplete records at any time.</li>
+        </ul>
+      </section>
+
+      <section class="sec" id="p-contact">
+        <button class="link-btn" title="Copy link to section">⧉</button>
+        <h3><span class="num">✉</span> Contact Us</h3>
+        <p>
+          For any privacy inquiries, please contact our data officer at
+          <a href="mailto:privacy@hoxyr.app">privacy@hoxyr.app</a>.
+        </p>
+      </section>
+    </article>
+
+    <!-- ========== REFUNDS ========== -->
+    <article class="doc" id="doc-refunds" role="tabpanel" aria-labelledby="tab-refunds" hidden>
+      <div class="doc-head">
+        <span class="tag">Document 03 / Billing</span>
+        <h2>Refund Policy</h2>
+        <div class="intro">
+          Thank you for subscribing to Hoxyr (<a href="https://hoxyr.app">https://hoxyr.app</a>). We want to ensure our
+          customers have an excellent experience using our AI workspace.
+        </div>
+        <div class="meta-row">
+          <span class="chip">Last updated · <b>October 1, 2026</b></span>
+          <span class="chip">Processed by · <b>Paddle</b></span>
+          <span class="chip">Payout window · <b>5–10 business days</b></span>
+        </div>
       </div>
-      <div class="bg-[#FCFCF9] rounded-2xl border border-zinc-200 p-8 text-center">
-        <div class="w-12 h-12 rounded-full bg-[#5B5CF6] text-white grid place-items-center font-bold mx-auto">03</div>
-        <h3 class="mt-4 font-semibold">Get results instantly</h3>
-        <p class="mt-2 text-sm text-zinc-500">Insights, drafts, reports, and actions — delivered where you work.</p>
+
+      <section class="sec" id="r-trial">
+        <button class="link-btn" title="Copy link to section">⧉</button>
+        <h3><span class="num">1</span> Free Trial Period</h3>
+        <p>
+          We offer a <strong>14-day free trial</strong> for our paid Pro plan, with <strong>no credit card required</strong>
+          at sign-up. This allows you to fully test all unlimited AI actions and integrations before committing to a paid
+          plan. You can cancel your subscription at any time during the trial period without being charged.
+        </p>
+        <div class="callout key">
+          <span class="ci">✓</span>
+          <span><b>Cancel anytime during the trial</b> and you will not be charged a single cent.</span>
+        </div>
+      </section>
+
+      <section class="sec" id="r-eligibility">
+        <button class="link-btn" title="Copy link to section">⧉</button>
+        <h3><span class="num">2</span> Refund Eligibility</h3>
+        <p>
+          Because we provide a 14-day fully-featured free trial, subscriptions are generally
+          <strong>non-refundable once the billing period begins</strong>. However, we assess refund requests on a
+          case-by-case basis under the following exceptions:
+        </p>
+        <ul class="clean">
+          <li><b>Technical Issues:</b> If a confirmed system bug or prolonged downtime entirely prevents you from using Hoxyr, and our support team cannot resolve it within 3 business days.</li>
+          <li><b>Accidental Renewal:</b> If you intended to cancel but were charged, and you submit a refund request within 48 hours of the renewal transaction, provided zero AI actions were used during that billing cycle.</li>
+        </ul>
+        <div class="callout warn">
+          <span class="ci">⚠</span>
+          <span>Accidental-renewal requests must be filed <b>within 48 hours</b> of the charge, with <b>zero AI actions</b> used in that cycle.</span>
+        </div>
+      </section>
+
+      <section class="sec" id="r-processing">
+        <button class="link-btn" title="Copy link to section">⧉</button>
+        <h3><span class="num">3</span> Processing Refunds</h3>
+        <p>
+          All payments, invoicing, and tax compliances are managed by our reseller partner, <strong>Paddle</strong>. If a
+          refund is approved by our team, it will be credited back via Paddle to your original payment method
+          (Credit Card / PayPal) within <strong>5–10 business days</strong>.
+        </p>
+      </section>
+
+      <section class="sec" id="r-contact">
+        <button class="link-btn" title="Copy link to section">⧉</button>
+        <h3><span class="num">✉</span> Contact Us</h3>
+        <p>
+          To request a refund or dispute a charge, please email
+          <a href="mailto:support@hoxyr.app">support@hoxyr.app</a> with your active workspace details and invoice number.
+        </p>
+      </section>
+    </article>
+
+    <div class="no-results" id="noResults" style="display:none">
+      <b>No matching sections</b>
+      Try a different keyword — e.g. “cancel”, “Paddle”, “GDPR”, “encryption” or “trial”.
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <div>
+        <h3>Still unsure? Ask us anything.</h3>
+        <p>Our team replies fast — legal, billing, security or product questions, in plain English.</p>
+      </div>
+      <div class="acts">
+        <a class="btn btn-ghost" href="mailto:support@hoxyr.app">✉ Email support</a>
+        <a class="btn btn-solid" href="#doc-terms">Start free trial →</a>
       </div>
     </div>
   </div>
-</section>
+</main>
 
-<!-- AI SHOWCASE -->
-<section class="max-w-[1120px] mx-auto px-6 py-16">
-  <div class="bg-[#0B0B0F] rounded-[32px] p-8 md:p-12 grid md:grid-cols-2 gap-10 items-center text-white overflow-hidden relative">
-    <div class="absolute -top-20 -right-20 w-80 h-80 bg-[#5B5CF6] rounded-full blur-[100px] opacity-30"></div>
-    <div class="relative">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight leading-tight">Meet your new<br> AI teammate.</h2>
-      <p class="mt-4 text-zinc-400 leading-relaxed">From research to reporting, Hoxyr handles the repetitive work so your team can focus on the decisions that matter.</p>
-      <ul class="mt-6 space-y-3 text-sm">
-        <li class="flex gap-3"><span class="text-[#5B5CF6]">✓</span> Draft, summarize, and rewrite in your brand voice.</li>
-        <li class="flex gap-3"><span class="text-[#5B5CF6]">✓</span> Turn meetings into tasks, owners, and follow-ups.</li>
-        <li class="flex gap-3"><span class="text-[#5B5CF6]">✓</span> Analyze documents, tickets, and feedback at scale.</li>
-        <li class="flex gap-3"><span class="text-[#5B5CF6]">✓</span> Trigger actions across your tools — automatically.</li>
-      </ul>
-    </div>
-    <div class="bg-white rounded-2xl p-6 text-[#0B0B0F] relative">
-      <div class="flex items-center gap-3 text-sm font-semibold"><span class="w-8 h-8 rounded-full bg-violet-100 grid place-items-center">✦</span> Hoxyr AI <span class="ml-auto text-xs bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full">Active</span></div>
-      <div class="mt-6 space-y-3 text-sm">
-        <div class="bg-zinc-100 rounded-xl p-3">Summarize this 20-page report in 3 bullets?</div>
-        <div class="bg-[#5B5CF6] text-white rounded-xl p-3">Done — 1) Revenue up 18% MoM 2) Churn down to 2.1% 3) Top risk: onboarding drop-off at step 2.</div>
-        <div class="bg-zinc-100 rounded-xl p-3">Draft follow-up email to the team?</div>
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <a href="#" class="brand"><span class="mark">◈</span>Hoxyr</a>
+        <p>AI workspace for modern teams. Connect your tools and ship faster.</p>
+      </div>
+      <div>
+        <h5>Product</h5>
+        <ul>
+          <li><a href="#" data-jump="terms">Features</a></li>
+          <li><a href="#" data-jump="terms">Pricing</a></li>
+          <li><a href="#" data-jump="terms">Integrations</a></li>
+          <li><a href="#" data-jump="terms">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#" data-jump="terms">About</a></li>
+          <li><a href="#" data-jump="terms">Blog</a></li>
+          <li><a href="#" data-jump="terms">Careers</a></li>
+          <li><a href="#" data-jump="contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#doc-terms" data-jump="terms">Terms of Service</a></li>
+          <li><a href="#doc-privacy" data-jump="privacy">Privacy Policy</a></li>
+          <li><a href="#doc-refunds" data-jump="refunds">Refund Policy</a></li>
+          <li><a href="#" data-jump="privacy">Security</a></li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- USE CASES -->
-<section class="max-w-[1120px] mx-auto px-6 pb-8">
-  <div class="grid md:grid-cols-4 gap-4">
-    <div class="bg-white border border-zinc-200 rounded-2xl p-6"><p class="text-xs font-bold tracking-widest uppercase text-[#5B5CF6]">For founders</p><p class="mt-2 text-sm text-zinc-600">Understand your metrics without waiting on an analyst.</p></div>
-    <div class="bg-white border border-zinc-200 rounded-2xl p-6"><p class="text-xs font-bold tracking-widest uppercase text-[#5B5CF6]">For marketers</p><p class="mt-2 text-sm text-zinc-600">Turn campaign data into clear next steps.</p></div>
-    <div class="bg-white border border-zinc-200 rounded-2xl p-6"><p class="text-xs font-bold tracking-widest uppercase text-[#5B5CF6]">For support</p><p class="mt-2 text-sm text-zinc-600">Resolve tickets faster with AI-drafted replies.</p></div>
-    <div class="bg-white border border-zinc-200 rounded-2xl p-6"><p class="text-xs font-bold tracking-widest uppercase text-[#5B5CF6]">For operations</p><p class="mt-2 text-sm text-zinc-600">Automate handoffs, reporting, and updates.</p></div>
-  </div>
-</section>
-
-<!-- PRICING -->
-<section id="pricing" class="bg-white border-y border-zinc-100">
-  <div class="max-w-[1120px] mx-auto px-6 py-16">
-    <div class="text-center">
-      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Simple pricing. Scale when you need to.</h2>
-      <div class="mt-6 inline-flex bg-zinc-100 rounded-full p-1">
-        <button id="monthlyBtn" class="px-6 py-2 rounded-full bg-[#0B0B0F] text-white text-sm font-semibold">Monthly</button>
-        <button id="yearlyBtn" class="px-6 py-2 rounded-full text-sm font-semibold text-zinc-600">Yearly <span class="text-emerald-600">— Save 20%</span></button>
-      </div>
+    <div class="fbot">
+      <span>© 2026 Hoxyr. All rights reserved. • Made by Kabbo</span>
+      <span class="links">
+        <a href="#" data-jump="privacy">Privacy</a>
+        <a href="#" data-jump="terms">Terms</a>
+        <a href="#" data-jump="privacy">Security</a>
+      </span>
     </div>
-    <div class="mt-10 grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-      <div class="bg-[#FCFCF9] border border-zinc-200 rounded-2xl p-8">
-        <h3 class="font-semibold">Free — <span class="monthly-price">$0</span><span class="yearly-price hidden">$0</span></h3>
-        <p class="text-sm text-zinc-500 mt-1">For individuals getting started.</p>
-        <ul class="mt-6 space-y-2 text-sm text-zinc-600"><li>✓ 1 workspace</li><li>✓ 100 AI actions / month</li><li>✓ 3 integrations</li><li>✓ Community support</li></ul>
-        <a href="#" class="mt-8 block text-center bg-white border border-zinc-200 font-semibold py-3 rounded-full hover:bg-zinc-50 transition">Start free</a>
-      </div>
-      <div class="bg-[#0B0B0F] text-white rounded-2xl p-8 relative shadow-xl scale-[1.02]">
-        <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#5B5CF6] text-xs font-bold px-3 py-1 rounded-full">Most popular</span>
-        <h3 class="font-semibold">Pro — <span class="monthly-price">$24</span><span class="yearly-price hidden">$19</span><span class="text-sm font-normal text-zinc-400">/mo</span></h3>
-        <p class="text-sm text-zinc-400 mt-1">For growing teams.</p>
-        <ul class="mt-6 space-y-2 text-sm text-zinc-300"><li>✓ Everything in Free</li><li>✓ Unlimited AI actions</li><li>✓ 40+ integrations</li><li>✓ Team workspaces & roles</li><li>✓ Priority support</li></ul>
-        <a href="#" class="mt-8 block text-center bg-[#5B5CF6] font-semibold py-3 rounded-full hover:bg-[#4F46E5] transition">Start free trial</a>
-      </div>
-      <div class="bg-[#FCFCF9] border border-zinc-200 rounded-2xl p-8">
-        <h3 class="font-semibold">Enterprise — Custom</h3>
-        <p class="text-sm text-zinc-500 mt-1">For large organizations.</p>
-        <ul class="mt-6 space-y-2 text-sm text-zinc-600"><li>✓ SSO, SAML, audit logs</li><li>✓ Dedicated success manager</li><li>✓ Custom onboarding & training</li><li>✓ SLA & advanced security</li></ul>
-        <a href="#" class="mt-8 block text-center bg-white border border-zinc-200 font-semibold py-3 rounded-full hover:bg-zinc-50 transition">Contact sales</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq" class="max-w-[720px] mx-auto px-6 py-16">
-  <h2 class="text-3xl font-bold tracking-tight text-center">Frequently asked questions</h2>
-  <div class="mt-8 divide-y divide-zinc-200 border-y border-zinc-200">
-    <details class="group py-5" open><summary class="flex justify-between items-center font-medium cursor-pointer list-none">What is Hoxyr? <span class="group-open:rotate-180 transition">⌄</span></summary><p class="mt-3 text-sm leading-relaxed text-zinc-500">Hoxyr is an AI workspace that helps teams connect their tools, ask questions in plain English, and automate repetitive work — all in one place.</p></details>
-    <details class="group py-5"><summary class="flex justify-between items-center font-medium cursor-pointer list-none">How does the AI work? <span class="group-open:rotate-180 transition">⌄</span></summary><p class="mt-3 text-sm leading-relaxed text-zinc-500">Hoxyr connects to your existing tools, understands your data, and helps you ask questions, generate content, and trigger workflows without code.</p></details>
-    <details class="group py-5"><summary class="flex justify-between items-center font-medium cursor-pointer list-none">Is my data safe? <span class="group-open:rotate-180 transition">⌄</span></summary><p class="mt-3 text-sm leading-relaxed text-zinc-500">Yes. Your data is encrypted, access-controlled, and never used to train public models. You own everything you put in.</p></details>
-    <details class="group py-5"><summary class="flex justify-between items-center font-medium cursor-pointer list-none">Can I connect my tools? <span class="group-open:rotate-180 transition">⌄</span></summary><p class="mt-3 text-sm leading-relaxed text-zinc-500">Yes. Hoxyr supports Slack, Notion, Google Drive, HubSpot, Linear, and 40+ other tools — with more added every month.</p></details>
-    <details class="group py-5"><summary class="flex justify-between items-center font-medium cursor-pointer list-none">Do you offer a free trial? <span class="group-open:rotate-180 transition">⌄</span></summary><p class="mt-3 text-sm leading-relaxed text-zinc-500">Yes. Every paid plan starts with a 14-day free trial. No credit card required.</p></details>
-    <details class="group py-5"><summary class="flex justify-between items-center font-medium cursor-pointer list-none">Can I cancel anytime? <span class="group-open:rotate-180 transition">⌄</span></summary><p class="mt-3 text-sm leading-relaxed text-zinc-500">Yes. Cancel or change plans whenever you want, in one click.</p></details>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="max-w-[1120px] mx-auto px-6 pb-16">
-  <div class="bg-[#5B5CF6] rounded-[32px] p-10 md:p-16 text-center text-white relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
-    <div class="relative">
-      <h2 class="text-3xl md:text-5xl font-bold tracking-tight">Ready to put AI to work?</h2>
-      <p class="mt-3 text-white/80">Start free and see your first result in minutes.</p>
-      <a href="#" class="mt-8 inline-flex bg-white text-[#0B0B0F] font-semibold px-8 py-3.5 rounded-full hover:bg-zinc-100 transition">Start free trial</a>
-      <p class="mt-3 text-xs text-white/60">No credit card required.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="border-t border-zinc-200 bg-white">
-  <div class="max-w-[1120px] mx-auto px-6 py-10 grid grid-cols-2 md:grid-cols-5 gap-8 text-sm">
-    <div class="col-span-2"><div class="flex items-center gap-2 font-extrabold text-lg"><span class="w-8 h-8 rounded-lg bg-[#0B0B0F] text-white grid place-items-center text-sm">◈</span> Hoxyr</div><p class="mt-3 text-zinc-500 max-w-xs leading-relaxed">AI workspace for modern teams. Connect your tools and ship faster.</p></div>
-    <div><p class="font-semibold">Product</p><ul class="mt-3 space-y-2 text-zinc-500"><li><a href="#">Features</a></li><li><a href="#">Pricing</a></li><li><a href="#">Integrations</a></li><li><a href="#">Changelog</a></li></ul></div>
-    <div><p class="font-semibold">Company</p><ul class="mt-3 space-y-2 text-zinc-500"><li><a href="#">About</a></li><li><a href="#">Blog</a></li><li><a href="#">Careers</a></li><li><a href="#">Contact</a></li></ul></div>
-    <div><p class="font-semibold">Resources</p><ul class="mt-3 space-y-2 text-zinc-500"><li><a href="#">Docs</a></li><li><a href="#">Help center</a></li><li><a href="#">API</a></li><li><a href="#">Status</a></li></ul></div>
-  </div>
-  <div class="max-w-[1120px] mx-auto px-6 py-6 border-t border-zinc-100 flex flex-col md:flex-row justify-between gap-4 text-xs text-zinc-400">
-    <p>© 2026 Hoxyr. All rights reserved. • Made by Kabbo</p>
-    <div class="flex gap-6"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Security</a></div>
   </div>
 </footer>
 
+<button class="totop" id="toTop" aria-label="Back to top">↑</button>
+<div class="toast" id="toast"></div>
+
 <script>
-  const monthlyBtn = document.getElementById('monthlyBtn');
-  const yearlyBtn = document.getElementById('yearlyBtn');
-  const monthlyPrices = document.querySelectorAll('.monthly-price');
-  const yearlyPrices = document.querySelectorAll('.yearly-price');
-  
-  yearlyBtn.addEventListener('click', () => {
-    yearlyBtn.classList.add('bg-[#0B0B0F]', 'text-white');
-    yearlyBtn.classList.remove('text-zinc-600');
-    monthlyBtn.classList.remove('bg-[#0B0B0F]', 'text-white');
-    monthlyBtn.classList.add('text-zinc-600');
-    monthlyPrices.forEach(e => e.classList.add('hidden'));
-    yearlyPrices.forEach(e => e.classList.remove('hidden'));
+(function(){
+  "use strict";
+  var $  = function(s,c){return (c||document).querySelector(s);};
+  var $$ = function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));};
+
+  /* ---------- theme ---------- */
+  var themeBtn = $('#themeBtn');
+  var root = document.documentElement;
+  try{
+    var saved = localStorage.getItem('hoxyr-theme');
+    if(saved) root.setAttribute('data-theme', saved);
+  }catch(e){}
+  themeBtn.addEventListener('click', function(){
+    var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    themeBtn.textContent = next === 'dark' ? '◐' : '◑';
+    try{ localStorage.setItem('hoxyr-theme', next); }catch(e){}
   });
-  monthlyBtn.addEventListener('click', () => {
-    monthlyBtn.classList.add('bg-[#0B0B0F]', 'text-white');
-    monthlyBtn.classList.remove('text-zinc-600');
-    yearlyBtn.classList.remove('bg-[#0B0B0F]', 'text-white');
-    yearlyBtn.classList.add('text-zinc-600');
-    yearlyPrices.forEach(e => e.classList.add('hidden'));
-    monthlyPrices.forEach(e => e.classList.remove('hidden'));
+
+  /* ---------- toast ---------- */
+  var toastEl = $('#toast'), toastTimer;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2100);
+  }
+
+  /* ---------- snapshot original markup for search restore ---------- */
+  var sections = $$('.doc .sec');
+  sections.forEach(function(sec){ sec.dataset.original = sec.innerHTML; });
+  var docHeads = $$('.doc .doc-head');
+  docHeads.forEach(function(h){ h.dataset.original = h.innerHTML; });
+
+  /* ---------- tabs ---------- */
+  var tabs = $$('.tab');
+  var docs = $$('.doc');
+  var current = 'terms';
+
+  function setDoc(name, opts){
+    opts = opts || {};
+    current = name;
+    tabs.forEach(function(t){
+      var on = t.dataset.doc === name;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    docs.forEach(function(d){
+      var on = d.id === 'doc-' + name;
+      d.classList.toggle('active', on);
+      if(on){ d.removeAttribute('hidden'); } else { d.setAttribute('hidden',''); }
+    });
+    buildToc();
+    applyFilter(true);
+    if(opts.scrollToTop !== false){
+      var tb = $('#toolbar');
+      var y = tb.getBoundingClientRect().top + window.pageYOffset - 8;
+      if(window.pageYOffset > y) window.scrollTo({top:y, behavior:'smooth'});
+    }
+  }
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){ setDoc(t.dataset.doc); });
   });
+  $$('[data-jump]').forEach(function(a){
+    a.addEventListener('click', function(ev){
+      var target = a.dataset.jump;
+      if(target === 'contact'){
+        ev.preventDefault();
+        var card = $('#contact');
+        if(card){ card.scrollIntoView({behavior:'smooth', block:'center'}); }
+        return;
+      }
+      ev.preventDefault();
+      setDoc(target);
+      window.scrollTo({top:0, behavior:'smooth'});
+    });
+  });
+
+  /* ---------- TOC ---------- */
+  var tocList = $('#tocList');
+  function buildToc(){
+    var doc = $('#doc-' + current);
+    tocList.innerHTML = '';
+    $$('.sec', doc).forEach(function(sec){
+      if(sec.style.display === 'none') return;
+      var h = $('h3', sec);
+      if(!h) return;
+      var li = document.createElement('li');
+      var a  = document.createElement('a');
+      a.href = '#' + sec.id;
+      var numEl = $('.num', h);
+      var label = h.textContent.trim();
+      if(numEl) label = label.replace(numEl.textContent.trim(), '').trim();
+      a.textContent = label;
+      a.dataset.target = sec.id;
+      a.addEventListener('click', function(ev){
+        ev.preventDefault();
+        var y = sec.getBoundingClientRect().top + window.pageYOffset - 168;
+        window.scrollTo({top:y, behavior:'smooth'});
+        sec.classList.remove('flash');
+        void sec.offsetWidth;
+        sec.classList.add('flash');
+        history.replaceState(null,'','#' + sec.id);
+      });
+      li.appendChild(a);
+      tocList.appendChild(li);
+    });
+    spy();
+  }
+
+  /* ---------- scroll spy ---------- */
+  function spy(){
+    var doc = $('#doc-' + current);
+    var visible = $$('.sec', doc).filter(function(s){ return s.style.display !== 'none'; });
+    var links = $$('a', tocList);
+    if(!visible.length){ links.forEach(function(l){l.classList.remove('active');}); return; }
+    var marker = window.pageYOffset + 190;
+    var activeId = visible[0].id;
+    visible.forEach(function(s){ if(s.offsetTop <= marker) activeId = s.id; });
+    links.forEach(function(l){ l.classList.toggle('active', l.dataset.target === activeId); });
+  }
+
+  /* ---------- progress + to-top ---------- */
+  var bar = $('#progress'), toTop = $('#toTop');
+  function onScroll(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+    toTop.classList.toggle('show', h.scrollTop > 620);
+    spy();
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  toTop.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+
+  /* ---------- search ---------- */
+  var input = $('#searchInput'), countLine = $('#countLine'), noRes = $('#noResults');
+  function escRe(s){ return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }
+
+  function highlight(el, q){
+    var re = new RegExp('(' + escRe(q) + ')','ig');
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+    var nodes = [], n;
+    while((n = walker.nextNode())) nodes.push(n);
+    nodes.forEach(function(node){
+      var val = node.nodeValue;
+      if(!val || !re.test(val)) return;
+      re.lastIndex = 0;
+      var span = document.createElement('span');
+      span.innerHTML = val.replace(re, '<mark>$1</mark>');
+      node.parentNode.replaceChild(span, node);
+    });
+  }
+
+  function applyFilter(isTabSwitch){
+    var q = (input.value || '').trim();
+    var shown = 0, total = 0;
+
+    docs.forEach(function(doc){
+      var docIsCurrent = doc.id === 'doc-' + current;
+      var head = $('.doc-head', doc);
+      var docMatch = false;
+
+      $$('.sec', doc).forEach(function(sec){
+        total += docIsCurrent ? 1 : 0;
+        sec.innerHTML = sec.dataset.original;
+        if(!q){
+          sec.style.display = '';
+          if(docIsCurrent) shown++;
+          return;
+        }
+        var hay = sec.textContent.toLowerCase();
+        if(hay.indexOf(q.toLowerCase()) !== -1){
+          sec.style.display = '';
+          highlight(sec, q);
+          docMatch = true;
+          if(docIsCurrent) shown++;
+        }else{
+          sec.style.display = 'none';
+        }
+      });
+
+      /* head restore / highlight */
+      head.innerHTML = head.dataset.original;
+      if(q && docMatch){
+        head.style.display = '';
+        highlight(head, q);
+      }else if(q && !docMatch){
+        head.style.display = docIsCurrent ? '' : '';
+      }else{
+        head.style.display = '';
+      }
+    });
+
+    if(q){
+      countLine.textContent = shown + ' matching section' + (shown === 1 ? '' : 's') + ' for “' + q + '”';
+      noRes.style.display = shown === 0 ? 'block' : 'none';
+    }else{
+      countLine.textContent = currentLabel() + ' · ' + shown + ' sections · reading time ~' + readTime() + ' min';
+      noRes.style.display = 'none';
+    }
+    if(!isTabSwitch) buildToc(); else buildToc();
+  }
+
+  function currentLabel(){
+    var t = $('.tab[data-doc="' + current + '"]');
+    return t ? t.textContent.trim() : '';
+  }
+  function readTime(){
+    var doc = $('#doc-' + current);
+    var words = doc.textContent.trim().split(/\s+/).length;
+    return Math.max(1, Math.round(words / 220));
+  }
+
+  var searchTimer;
+  input.addEventListener('input', function(){
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(function(){ applyFilter(false); }, 130);
+  });
+  input.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ input.value=''; applyFilter(false); input.blur(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === '/' && document.activeElement !== input){ e.preventDefault(); input.focus(); }
+    if((e.key === '1' || e.key === '2' || e.key === '3') && e.altKey){
+      e.preventDefault();
+      setDoc(['terms','privacy','refunds'][parseInt(e.key,10)-1]);
+    }
+  });
+
+  /* ---------- copy section links ---------- */
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('.link-btn');
+    if(!btn) return;
+    var sec = btn.closest('.sec');
+    if(!sec) return;
+    var url = location.origin + location.pathname + '#' + sec.id;
+    var done = function(){
+      btn.classList.add('copied');
+      btn.textContent = '✓';
+      toast('Section link copied');
+      setTimeout(function(){ btn.classList.remove('copied'); btn.textContent='⧉'; }, 1600);
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(done).catch(fallback);
+    }else{ fallback(); }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = url; document.body.appendChild(ta); ta.select();
+      try{ document.execCommand('copy'); done(); }catch(err){ toast('Copy failed'); }
+      document.body.removeChild(ta);
+    }
+  });
+
+  /* ---------- print ---------- */
+  $('#printBtn').addEventListener('click', function(){
+    docs.forEach(function(d){ d.classList.add('active'); d.removeAttribute('hidden'); });
+    setTimeout(function(){
+      window.print();
+      setDoc(current, {scrollToTop:false});
+    }, 90);
+  });
+
+  /* ---------- deep link ---------- */
+  function openHash(){
+    var id = (location.hash || '').replace('#','');
+    if(!id) return false;
+    if(id.indexOf('doc-') === 0){ setDoc(id.replace('doc-',''), {scrollToTop:false}); return true; }
+    var sec = document.getElementById(id);
+    if(sec && sec.classList.contains('sec')){
+      var parentDoc = sec.closest('.doc');
+      if(parentDoc) setDoc(parentDoc.id.replace('doc-',''), {scrollToTop:false});
+      setTimeout(function(){
+        var y = sec.getBoundingClientRect().top + window.pageYOffset - 168;
+        window.scrollTo({top:y, behavior:'smooth'});
+        sec.classList.add('flash');
+      }, 160);
+      return true;
+    }
+    return false;
+  }
+
+  /* ---------- init ---------- */
+  setDoc('terms', {scrollToTop:false});
+  applyFilter(true);
+  if(!openHash()) onScroll();
+  window.addEventListener('resize', onScroll);
+  window.addEventListener('hashchange', openHash);
+})();
 </script>
 </body>
-  </html>
+</html>
