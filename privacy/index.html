@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Hoxyr</title>
+  <meta name="description" content="Privacy Policy for Hoxyr. We never use your data to train public AI models. Payment data is managed securely by Paddle as our Merchant of Record." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://hoxyr.app/privacy/" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50:  '#eef2ff',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+            },
+            ink: {
+              950: '#09090b',
+              900: '#0f0f12',
+              850: '#131318',
+              800: '#1c1c22',
+              700: '#27272a',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body { -webkit-font-smoothing: antialiased; }
+    .gradient-text {
+      background: linear-gradient(120deg, #a5b4fc, #6366f1 40%, #8b5cf6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .prose-legal h2 { scroll-margin-top: 6rem; }
+  </style>
+</head>
+<body class="bg-ink-950 text-zinc-300 font-sans antialiased selection:bg-brand-500/30">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 border-b border-white/5 bg-ink-950/80 backdrop-blur-xl">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="https://hoxyr.app/" class="flex items-center gap-2.5">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-500 to-purple-500 text-sm font-extrabold text-white shadow-lg shadow-brand-600/30">H</span>
+          <span class="text-lg font-semibold tracking-tight text-white">Hoxyr</span>
+        </a>
+        <div class="hidden items-center gap-7 text-sm text-zinc-400 md:flex">
+          <a href="https://hoxyr.app/#features" class="transition hover:text-white">Features</a>
+          <a href="https://hoxyr.app/#integrations" class="transition hover:text-white">Integrations</a>
+          <a href="https://hoxyr.app/#pricing" class="transition hover:text-white">Pricing</a>
+          <a href="/terms/" class="transition hover:text-white">Terms</a>
+          <a href="/privacy/" class="text-white">Privacy</a>
+          <a href="/refund/" class="transition hover:text-white">Refunds</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://app.hoxyr.app/login" class="hidden text-sm font-medium text-zinc-300 transition hover:text-white sm:inline-block">Sign in</a>
+          <a href="https://app.hoxyr.app/signup" class="rounded-lg bg-gradient-to-r from-brand-500 to-purple-500 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-brand-600/30 transition hover:opacity-90">Get started</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-white/5">
+    <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(40rem_30rem_at_50%_-10%,rgba(99,102,241,0.18),transparent)]"></div>
+    <div class="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:py-28">
+      <span class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-zinc-300">Legal</span>
+      <h1 class="mt-6 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">Privacy <span class="gradient-text">Policy</span></h1>
+      <p class="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-zinc-400">How Hoxyr collects, uses, and protects your data. We never use your content to train public models, and your payment data is handled securely by Paddle.</p>
+      <p class="mt-4 text-xs text-zinc-500">Last updated: November 1, 2026</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main class="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:py-24">
+    <article class="prose-legal space-y-12 text-zinc-300">
+
+      <!-- 1. Information We Collect -->
+      <section id="information">
+        <h2 class="flex items-center gap-3 text-2xl font-bold text-white">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand-500/15 text-sm font-bold text-brand-400">1</span>
+          Information We Collect
+        </h2>
+        <p class="mt-4 leading-relaxed">We collect only the information necessary to operate the Hoxyr workspace and the integrations you enable. This falls into three categories:</p>
+
+        <div class="mt-5 grid gap-4 sm:grid-cols-3">
+          <div class="rounded-xl border border-white/5 bg-white/[0.02] p-5">
+            <div class="text-sm font-semibold text-white">Account information</div>
+            <p class="mt-2 text-sm leading-relaxed text-zinc-400">Name, email address, organization details, and authentication data you provide when signing up.</p>
+          </div>
+          <div class="rounded-xl border border-white/5 bg-white/[0.02] p-5">
+            <div class="text-sm font-semibold text-white">API-connected tools data</div>
+            <p class="mt-2 text-sm leading-relaxed text-zinc-400">Content from connected integrations (Slack, Notion, Google Workspace, GitHub, etc.) accessed via OAuth to power your workspace.</p>
+          </div>
+          <div class="rounded-xl border border-white/5 bg-white/[0.02] p-5">
+            <div class="text-sm font-semibold text-white">Payment data</div>
+            <p class="mt-2 text-sm leading-relaxed text-zinc-400">Billing is handled securely by <strong class="text-white">Paddle</strong>, our Merchant of Record. Hoxyr does not store full card numbers.</p>
+          </div>
+        </div>
+        <p class="mt-5 leading-relaxed">We also collect basic usage and diagnostic data (such as device type and feature interactions) to keep the Service reliable and secure. We do not track you across third-party advertising networks.</p>
+      </section>
+
+      <!-- 2. How We Use Your Information -->
+      <section id="how-we-use">
+        <h2 class="flex items-center gap-3 text-2xl font-bold text-white">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand-500/15 text-sm font-bold text-brand-400">2</span>
+          How We Use Your Information
+        </h2>
+        <p class="mt-4 leading-relaxed">We use your information <strong class="text-white">strictly to operate the workspace</strong> for you. This includes authenticating your account, connecting the integrations you authorize, generating AI responses using your connected context, securing the Service, and providing support.</p>
+        <p class="mt-3 leading-relaxed">We <strong class="text-white">never use your data to train public AI models</strong>. Your connected content is used solely to serve your own workspace sessions and is not repurposed to train any publicly available foundation model, ours or anyone else's. Aggregated, de-identified analytics may be used to improve service reliability, but never to identify you or train models on your content.</p>
+        <p class="mt-3 leading-relaxed">The paid <strong class="text-white">Pro plan</strong> ($24/month or $19/month billed annually) is processed entirely by <strong class="text-white">Paddle</strong> as Merchant of Record. Paddle handles payment, tax, and billing compliance; Hoxyr receives only the minimum data needed to confirm your subscription status.</p>
+      </section>
+
+      <!-- 3. Data Security & Retention -->
+      <section id="security">
+        <h2 class="flex items-center gap-3 text-2xl font-bold text-white">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand-500/15 text-sm font-bold text-brand-400">3</span>
+          Data Security &amp; Retention
+        </h2>
+        <p class="mt-4 leading-relaxed">We protect your data using <strong class="text-white">end-to-end encryption</strong> in transit and encryption at rest. Access to production systems and customer data is restricted through <strong class="text-white">role-based access controls</strong>, with the principle of least privilege enforced across all internal tooling.</p>
+        <p class="mt-3 leading-relaxed">We retain your account and connected-data caches only for as long as needed to provide the Service, or as required by law. When you delete an integration or close your account, associated data is removed from active systems within 30 days and from backups within 90 days, except where retention is legally required.</p>
+        <p class="mt-3 leading-relaxed">Payment data is stored and secured by Paddle in accordance with PCI-DSS standards. Hoxyr does not store complete payment instrument details.</p>
+      </section>
+
+      <!-- 4. GDPR / CCPA Privacy Rights -->
+      <section id="rights">
+        <h2 class="flex items-center gap-3 text-2xl font-bold text-white">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-brand-500/15 text-sm font-bold text-brand-400">4</span>
+          GDPR / CCPA Privacy Rights
+        </h2>
+        <p class="mt-4 leading-relaxed">Depending on where you live, you may have rights under the EU/UK GDPR, the California Consumer Privacy Act (CCPA), and similar laws. Subject to applicable law, you may exercise the following rights:</p>
+        <ul class="mt-5 space-y-3">
+          <li class="flex items-start gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-4">
+            <span class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-brand-500/15 text-xs font-bold text-brand-400">A</span>
+            <span class="text-sm leading-relaxed"><strong class="text-white">Access.</strong> Request a copy of the personal data we hold about you and the integrations connected to your workspace.</span>
+          </li>
+          <li class="flex items-start gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-4">
+            <span class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-brand-500/15 text-xs font-bold text-brand-400">D</span>
+            <span class="text-sm leading-relaxed"><strong class="text-white">Deletion.</strong> Request that we delete your personal data and disconnect integrations, subject to legal retention obligations.</span>
+          </li>
+          <li class="flex items-start gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-4">
+            <span class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-brand-500/15 text-xs font-bold text-brand-400">M</span>
+            <span class="text-sm leading-relaxed"><strong class="text-white">Modification.</strong> Correct inaccurate or incomplete personal data, or update your account information at any time.</span>
+          </li>
+        </ul>
+        <p class="mt-5 leading-relaxed">You also have the right to object to or restrict certain processing, withdraw consent, and lodge a complaint with your local data protection authority. To exercise any right, contact our privacy team at <a href="mailto:privacy@hoxyr.app" class="text-brand-400 underline-offset-4 hover:underline">privacy@hoxyr.app</a>. We respond to verified requests within 30 days.</p>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="rounded-2xl border border-white/5 bg-white/[0.02] p-6 sm:p-8">
+        <h2 class="text-xl font-bold text-white">Privacy questions?</h2>
+        <p class="mt-3 leading-relaxed">For any privacy or data-protection inquiry, contact our dedicated privacy team at <a href="mailto:privacy@hoxyr.app" class="text-brand-400 underline-offset-4 hover:underline">privacy@hoxyr.app</a>. For general support or billing, write to <a href="mailto:support@hoxyr.app" class="text-brand-400 underline-offset-4 hover:underline">support@hoxyr.app</a>.</p>
+      </section>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 bg-ink-900">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <div class="grid gap-10 md:grid-cols-4">
+        <div class="md:col-span-2">
+          <a href="https://hoxyr.app/" class="flex items-center gap-2.5">
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-brand-500 to-purple-500 text-sm font-extrabold text-white">H</span>
+            <span class="text-lg font-semibold text-white">Hoxyr</span>
+          </a>
+          <p class="mt-4 max-w-sm text-sm text-zinc-400">The AI workspace that unifies 40+ tools into one intelligent layer. Built for teams that move fast.</p>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-white">Product</h3>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-400">
+            <li><a href="https://hoxyr.app/#features" class="hover:text-white">Features</a></li>
+            <li><a href="https://hoxyr.app/#integrations" class="hover:text-white">Integrations</a></li>
+            <li><a href="https://hoxyr.app/#pricing" class="hover:text-white">Pricing</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold text-white">Legal</h3>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-400">
+            <li><a href="/terms/" class="hover:text-white">Terms of Service</a></li>
+            <li><a href="/privacy/" class="hover:text-white">Privacy Policy</a></li>
+            <li><a href="/refund/" class="hover:text-white">Refund Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-6 sm:flex-row">
+        <p class="text-xs text-zinc-500">© <span id="year">2026</span> Hoxyr. Paddle is the Merchant of Record for all transactions.</p>
+        <div class="flex items-center gap-4 text-xs text-zinc-500">
+          <a href="mailto:support@hoxyr.app" class="hover:text-zinc-300">support@hoxyr.app</a>
+          <span class="h-1 w-1 rounded-full bg-zinc-700"></span>
+          <a href="mailto:privacy@hoxyr.app" class="hover:text-zinc-300">privacy@hoxyr.app</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
